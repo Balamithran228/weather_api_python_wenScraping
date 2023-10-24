@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME PAGE</title>
+    {% load static %}
+    <style>
+div {
+    position: relative;
+    left: 500px;
+    background-color: steelblue;
+    bottom: -300px;
+    width: 400px;
+    border: 15px solid deepskyblue;
+    padding: 50px;
+    margin: 20px;
+}
+#pass,#user {
+    border-radius: 25px;
+    border: 2px solid white;
+    height: 15px;
+}
+h1{
+     position: relative;
+     color: white;
+     left: 590px;
+     bottom: -170px;
+}
+</style>
+</head>
+<body style="background-color:darkblue;">
+{% load static %}
+<p style="color:snow">hello guys here balamithran ,Welcome to Home page</p>
+    <h1>COVID BATCHERS</h1>
+
+<div>
+<form method="POST">
+    <h2 style="color:darkblue;"><strong>CUSTOMER LOG IN</strong></h2>
+  <label for="user">Name: &nbsp &nbsp &nbsp</label>
+  <input type="text" id="user" name="user" ><br>
+    <br>
+  <label for="pass">Password:</label>
+  <input type="text" id="pass" name="pass" ><br>
+    <br>
+    {% for msg in messages %}
+        <p id="messages">{{ msg }}</p>
+    {% endfor %}
+    {% csrf_token %}
+  <input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
